@@ -80,7 +80,7 @@ activation="ReLU"
 arch="fcnn"
 epochs=100
 save_path=BASE+"trained_models/"
-save_name="fcnn_k3_l3_select_1_4.pt"
+save_name="fcnn_k5_l3_select_1_4_test.pt"
 lr=0.00024594159283761457
 wd=0.023133758465751404
 

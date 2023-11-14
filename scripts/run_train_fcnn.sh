@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=feature
+#SBATCH --job-name=tran_cnn
 #SBATCH --time=24:00:00
 #SBATCH --cpus-per-task=10
 #SBATCH --gres=gpu:1
