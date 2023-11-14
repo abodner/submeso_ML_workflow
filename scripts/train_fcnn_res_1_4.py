@@ -120,40 +120,8 @@ trainer.fit(system, train_loader, test_loader)
 #model.save_model()
 torch.save(model, config["save_path"] + config["save_name"])
 
-#figure_fields=wandb.Image(plot_helpers.plot_fields(pyqg_dataset,model))
-#wandb.log({"Fields": figure_fields})
-
-#r2,corr=metrics.get_offline_metrics(model,test_loader)
-# figure_power=wandb.Image(figure_power)
-# Calculate r2 and corr for test dataset
-r2_list = []
-corr_list = []
-mse_list=[]
-for x_data, y_data in test_loader:
-    output = model(x_data.to(device))
-    mse = nn.MSELoss(y_data.to(device),output)
-    r2 = r2_score(output.detach().cpu().numpy(), y_data.detach().cpu().numpy())
-    corr, _ = pearsonr(output.detach().cpu().numpy().flatten(), y_data.detach().cpu().numpy().flatten())
-    r2_list.append(r2.detach().cpu())
-    corr_list.append(corr.detach().cpu())
-    mse_list.append(mse.detach().cpu())
-
-
-
-# Average r2 and corr values over the test dataset
-r2_avg = torch.tensor(r2_list.detach().cpu()).mean().item()
-corr_avg = torch.tensor(corr_list.detach().cpu()).mean().item()
-test_loss = torch.tensor(mse_list.detach().cpu()).mean().item()
-
-# wandb.log({"Power spectrum": figure_power})
-wandb.run.summary["r2"]=r2_avg
-wandb.run.summary["corr"]=corr_avg
-wandb.run.summary["test_loss"]=test_loss
 wandb.finish()
     
-    
-
-
 
 project_name="submeso_ML"
 
