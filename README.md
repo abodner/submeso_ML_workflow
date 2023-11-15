@@ -1,5 +1,5 @@
 # submeso_ML_workflow
-This is a repo contains code used to train a Neural Network parmeterization for submesoscale vertical buoyancy fluxes (Bodner, Balwada, and Zann, in prep.)
+This repo contains code used to train a Neural Network parmeterization for submesoscale vertical buoyancy fluxes (Bodner, Balwada, and Zann, in prep.)
 
 All modules can be found under `submeso_ml`, which consists of the following:
 * `data` contains the dataset file used as our dataloader.
