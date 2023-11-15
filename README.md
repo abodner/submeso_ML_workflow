@@ -4,6 +4,6 @@ This is a repo contains code used to train a Neural Network parmeterization for 
 All modules can be found under `submeso_ml`, which consists of the following:
 * `data` contains the dataset file used as our dataloader.
 * `systems` is a general regression systems which control the iteration process during training.
-* 'models' currently contains a Fully Convolutional Neural Network, or 'fcnn'.
+* `models` currently contains a Fully Convolutional Neural Network, or `fcnn`.
 
-The folder 'scripts' contains 'train_fcnn_res_1_4.py' which calls the above model to train the fcnn. The configuration of the cnn is defined by 'config' within the code. The script is executed with 'run_train_fcnn.sh'
+The folder 'scripts' contains `train_fcnn_res_1_4.py` which calls the above model to train the fcnn. The configuration of the cnn is defined by `config` within the code. The script is executed with `run_train_fcnn.sh`
