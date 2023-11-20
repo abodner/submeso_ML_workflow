@@ -37,7 +37,7 @@ BATCH_SIZE = 64  # Number of sample in each batch
 
 
 
-submeso_dataset=dataset.SubmesoDataset(['grad_B','FCOR', 'Nsquared', 'HML', 'TAU',
+submeso_dataset=dataset.SubmesoDataset(['grad_B','FCOR', 'HML', 'TAU',
               'Q', 'HBL', 'div', 'vort', 'strain'],res='1_4')
 
 
@@ -71,7 +71,7 @@ else:
 
 seed=123
 batch_size=256
-input_channels=10
+input_channels=9
 output_channels=1
 conv_layers = 3
 kernel = 5
